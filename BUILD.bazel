@@ -1,0 +1,16 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@npm//protoc-gen-ts:index.bzl", "ts_proto_library")
+
+package(default_visibility = ["//visibility:public"])
+
+proto_library(
+    name = "car_proto",
+    srcs = ["car.proto"],
+)
+
+ts_proto_library(
+    name = "car",
+    deps = [
+        ":car_proto",
+    ],
+)

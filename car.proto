@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message Car {
+  string name = 1;
+  string color = 2;
+}
+
+// custom repeated type throws error
+message Cars {
+  repeated Car cars = 1;
+}
+
+// primitve type works fine
+message List {
+  repeated string list = 1;
+}
